@@ -206,8 +206,9 @@ USAGE
         cursor.execute(make_table)
         cnx.autocommit = True
         
-
+        records=0
         for child in root:
+            records = records + 1
             line = ""
             col_array = []
             data_array = []
@@ -236,16 +237,16 @@ USAGE
 #             sqlfile.write('Query: {0}'.format(query))
 #             sqlfile.write('Data: {0}'.format(sql_data))
             result=cursor.execute(query,sql_data)
-            
+        logger.info('Records uploaded {}'.format(records))    
             
             
         cursor = cnx.cursor()
         query = ("call create_num_cast();")
         cursor.execute(query)
          
-        cursor = cnx.cursor()
-        query = ("CALL load_marked_data()")
-        cursor.execute(query,multi=True)
+        #cursor = cnx.cursor()
+        #query = ("CALL load_marked_data()")
+        #cursor.execute(query,multi=True)
             
         
         #=======================================================================
