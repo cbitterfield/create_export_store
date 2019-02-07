@@ -244,9 +244,9 @@ USAGE
         query = ("call create_num_cast();")
         cursor.execute(query)
          
-        #cursor = cnx.cursor()
-        #query = ("CALL load_marked_data()")
-        #cursor.execute(query,multi=True)
+        cursor = cnx.cursor()
+        query = ("CALL load_marked_data()")
+        cursor.execute(query,multi=True)
             
         
         #=======================================================================

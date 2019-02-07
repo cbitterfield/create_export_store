@@ -93,10 +93,10 @@ counter = 0
 product_block = 3000
 
 # Run Prep Category SQL Scripts
-print("Run procedure load records from marked records")
-cursor = cnx.cursor()
-query = ("CALL load_marked_data()")
-cursor.execute(query,multi=True)
+# print("Run procedure load records from marked records")
+# cursor = cnx.cursor()
+# query = ("CALL load_marked_data()")
+# cursor.execute(query,multi=True)
 
 cursor = cnx.cursor()
 query = ("call purge_duplicates_from_raw_series();")
